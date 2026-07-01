@@ -1,0 +1,109 @@
+#shop-items-container{
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: dense;
+    gap: 20px;
+}
+
+.shop-item{
+    display: grid;
+    padding: 4px;
+    border-radius: 10%;
+    background-color: var(--colour-surface);
+    text-align: center;
+    grid-template-areas: 
+    "image title title"
+    "image price ."
+    "image . button";
+}
+
+.shop-item-image{
+    width: 6em;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+    grid-area: image;
+    object-fit: cover;
+    aspect-ratio: 3/2;
+}
+
+.shop-item-title{
+    text-align: left;
+    margin-left: 10px;
+    grid-area: title;
+}
+
+.shop-item-price{
+    text-align: left;
+    margin-left: 10px;
+    grid-area: price;
+}
+
+.shop-item-button{
+    color: var(--colour-text);
+    border: 1px solid var(--colour-border);
+    width: 90px;
+    height: 30px;
+    margin-right: 20px;
+    border-radius:40%;
+    grid-area: button;
+    justify-self: right;
+    background-color: transparent;
+}
+
+.shop-item-button:hover{
+    border: 1px solid var(--colour-border-change);
+    cursor: pointer;
+}
+
+.shop-amount-controls{
+    color: var(--colour-text);
+    grid-area: button;
+    height: 30px;
+    margin-right: 20px;
+    width: 90px;
+    justify-self: right;
+}
+
+.shop-amount-controls > button{
+    background-color: transparent;
+    color: var(--colour-text);
+    border: 1px solid var(--colour-border);
+}
+
+.shop-amount-controls > button:hover{
+    border: 1px solid var(--colour-border-change);
+    cursor: pointer;
+}
+
+.shop-minus-button{
+    height: 100%;
+    width: 30px;
+}
+
+.shop-amount-value{
+    height: 100%;
+    width: 30px;
+    padding: 5px;
+    border-top: 1px solid var(--colour-border);
+    border-bottom: 1px solid var(--colour-border);
+}
+
+.shop-add-button{
+    height: 100%;
+    width: 30px;
+}
+
+@media (max-width: 1500px) {
+  #shop-items-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 900px) {
+  #shop-items-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

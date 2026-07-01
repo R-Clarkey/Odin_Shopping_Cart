@@ -1,0 +1,30 @@
+:root{
+  --colour-primary: #4f46e5;
+  --colour-secondary: #14b8a6;
+  --colour-accent: #fb7185;
+  --colour-bg: #0b1220;
+  --colour-surface: #111827;
+  --colour-surface-2: #0f172a;
+
+  --colour-text: #e5e7eb;
+  --colour-muted: #9ca3af;
+  --colour-border: #374151;
+  --colour-border-change: #6B7280;
+
+  --colour-success: #22c55e;
+  --colour-warning: #f59e0b;
+  --colour-danger:  #ef4444;
+
+
+}
+
+* {
+  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html{
+    color: var(--colour-text);
+    background-color: var(--colour-bg);
+}

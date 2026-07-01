@@ -1,0 +1,26 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    color: var(--colour-text);
+    background-color: var(--colour-surface);
+    padding: 10px;
+    align-items: center;
+}
+
+#nav-title-container{
+    width: 60%;
+    font-size: 2em;
+}
+
+#nav-links-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: right;
+    width: 40%;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--colour-text);
+}
