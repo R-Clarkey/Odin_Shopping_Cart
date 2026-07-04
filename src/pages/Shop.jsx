@@ -18,10 +18,10 @@ const Shop = () => {
     
     if(loading) return <p>Loading...</p>
     if(error) return <p>Network issue...</p>
+    console.log(data)
 
 return (
   <>
-    <div>Shop</div>
     <div id="shop-items-container">
       {data.map((item) => {
         const amount = cart[item.id]?.qty ?? 0
