@@ -2,7 +2,8 @@ nav{
     display: flex;
     flex-direction: row;
     color: var(--colour-text);
-    background-color: var(--colour-surface);
+    background-color: var(--colour-bg);
+    border-bottom: 1px solid var(--colour-border);
     padding: 10px;
     align-items: center;
 }

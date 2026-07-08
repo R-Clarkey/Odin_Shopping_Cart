@@ -1,5 +1,6 @@
 #shop-items-container{
     display: grid;
+    justify-content: center;
     margin: 30px 20px;
     padding: 10px;
     grid-template-columns: repeat(5, 1fr);
@@ -10,9 +11,12 @@
 .shop-item{
     display: grid;
     padding: 4px;
-    border-radius: 10%;
+    border: 1px solid var(--colour-border);
+    border-radius: 5px;
     background-color: var(--colour-surface);
     text-align: center;
+    grid-template-columns: 100px 1fr 120px;
+    grid-template-rows: auto auto auto;    
     grid-template-areas: 
     "image title title"
     "image price ."
@@ -20,9 +24,9 @@
 }
 
 .shop-item-image{
-    width: 6em;
+    width: 100px;
     height: auto;
-    justify-self: center;
+    justify-self: left;
     align-self: center;
     grid-area: image;
     object-fit: cover;
@@ -31,11 +35,14 @@
 
 .shop-item-title{
     text-align: left;
+    font-weight: bold;
     margin-left: 10px;
     grid-area: title;
+    font-size: 1em;
 }
 
 .shop-item-price{
+    font-size: 0.8em;
     text-align: left;
     margin-left: 10px;
     grid-area: price;
@@ -58,7 +65,7 @@
     cursor: pointer;
 }
 
-.shop-amount-controls{
+.shop-quantity-controls{
     color: var(--colour-text);
     grid-area: button;
     height: 30px;
@@ -67,13 +74,13 @@
     justify-self: right;
 }
 
-.shop-amount-controls > button{
+.shop-quantity-controls > button{
     background-color: transparent;
     color: var(--colour-text);
     border: 1px solid var(--colour-border);
 }
 
-.shop-amount-controls > button:hover{
+.shop-quantity-controls > button:hover{
     border: 1px solid var(--colour-border-change);
     cursor: pointer;
 }
@@ -83,7 +90,7 @@
     width: 30px;
 }
 
-.shop-amount-value{
+.shop-quantity-value{
     height: 100%;
     width: 30px;
     padding: 5px;

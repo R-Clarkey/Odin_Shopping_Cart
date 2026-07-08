@@ -24,7 +24,7 @@ return (
   <>
     <div id="shop-items-container">
       {data.map((item) => {
-        const amount = cart[item.id]?.qty ?? 0
+        const quantity = cart[item.id]?.qty ?? 0
 
         return (
           <div key={item.id} className="shop-item">
@@ -36,7 +36,7 @@ return (
             <p className="shop-item-title">{item.title}</p>
             <p className="shop-item-price">Price: £{item.price}</p>
 
-            {amount === 0 ? (
+            {quantity === 0 ? (
               <button
                 onClick={() => addToCart(item)}
                 className="shop-item-button"
@@ -44,9 +44,9 @@ return (
                 + Add
               </button>
             ) : (
-              <div className="shop-amount-controls">
+              <div className="shop-quantity-controls">
                 <button className="shop-minus-button" onClick={() => decrement(item.id)}>-</button>
-                <span className="shop-amount-value">{amount}</span>
+                <span className="shop-quantity-value">{quantity}</span>
                 <button className="shop-add-button" onClick={() => addToCart(item)}>+</button>
               </div>
             )}
