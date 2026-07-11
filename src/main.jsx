@@ -51,7 +51,7 @@ const Layout = () => {
   return (
     <>
       <Navbar totalQty={totalQty} />
-      <Outlet context={{ cart, setCart, addToCart, decrement }} />
+      <Outlet context={{ cart, setCart, addToCart, decrement}} />
       <Footer />
     </>
   )

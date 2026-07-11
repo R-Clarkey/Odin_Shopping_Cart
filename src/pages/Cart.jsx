@@ -1,9 +1,21 @@
 import { useEffect, useState } from "react"
 import { useOutletContext } from "react-router";
+import { Link } from "react-router"
+
 
 const Cart = () => {
 
     const { cart, setCart, addToCart, decrement } = useOutletContext()
+
+    let cartItemCount = 0
+    let cartRunningTotal = 0
+    for(let x in cart){
+        console.log("Item", cart[x]["product"]["price"])
+        cartItemCount += cart[x]["qty"]
+        cartRunningTotal += (Math.round(cart[x].product.price * 100) * cart[x].qty) / 100
+    }
+
+    let finalTotal = parseFloat((cartRunningTotal + 3.45).toFixed(2))
 
     return(
         <div id="cart-content-container">
@@ -40,16 +52,18 @@ const Cart = () => {
                     <h2 id="cart-summary-title">Order Summary</h2>
                     <div id="cart-subtotal-container" className="cart-subtotal-bottom-border">
                         <p className="cart-summary-text">
-                            Subtotal (-Work out item count here-)
+                            Subtotal ({cartItemCount} {cartItemCount == 1  ? "Item" : "Items"})
+                            {console.log("Subtotal final value", cartItemCount)}
                         </p>
                         <div id="cart-subtotal-value">
-                            Total
+                            {console.log("Running total", cartRunningTotal)}
+                            £{cartRunningTotal}
                         </div>
                     </div>
-                    <div id="cart-shipping-container">
-                        <p className="cart-summary-text">
+                    <div id="cart-shipping-container" className="cart-subtotal-bottom-border">
+                        <div id="cart-shipping-text">
                             Shipping
-                        </p>
+                        </div>
                         <div id="cart-shipping-duration">
                             Standard (3-5 days)
                         </div>
@@ -57,6 +71,26 @@ const Cart = () => {
                             £3.45
                         </p>
                     </div>
+                        <div id="cart-discount-text">
+                            Discounts
+                        </div>
+                    <div id="cart-discount-container" className="cart-subtotal-bottom-border">
+                        <input type="text" name="cart-discount" id="cart-discount" placeholder="Enter promo code"/>
+                        <button id="cart-discount-button" type="button">Apply</button>
+                        <div id="cart-discount-value">
+                            -£0.00
+                        </div>
+                    </div>
+                    <div id="cart-total-container">
+                        <div id="cart-total-text">
+                            Total
+                        </div>
+                        <div id="cart-total-value">
+                            £{finalTotal}
+                        </div>
+                    </div>
+                    <button id="cart-checkout-button" type="button"><i class="fa-solid fa-lock"></i> Checkout</button>
+                    <Link id="cart-link" to="/shop">Continue shopping</Link>
                 </div>
             </div>
         </div>
