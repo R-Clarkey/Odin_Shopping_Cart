@@ -6,7 +6,7 @@
 #cart-items-container{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 70%;
     padding: 20px;
     border-radius: 20px;
     max-height: 80vh;
@@ -142,12 +142,13 @@
 
 
 #cart-order-summary-container{
-    width: 40%;
+    width: 30%;
     border: 1px solid var(--colour-border);
     border-radius: 10px;
     padding: 20px 10px;
     background-color: var(--colour-surface);
     margin: 40px;
+    margin-bottom: auto;
 }
 
 #cart-order-summary{
@@ -250,7 +251,7 @@
 #cart-discount-button:hover{
     cursor: pointer;
     background-color: var(--colour-primary);
-    color: var(--colour-muted);
+    border: 1px solid var(--colour-text);
 }
 
 #cart-total-container{
@@ -285,6 +286,7 @@
 #cart-checkout-button:hover{
     cursor: pointer;
     color: var(--colour-muted);
+    border: 1px solid var(--colour-text);
 }
 
 #cart-link{

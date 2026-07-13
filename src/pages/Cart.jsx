@@ -15,6 +15,8 @@ const Cart = () => {
         cartRunningTotal += (Math.round(cart[x].product.price * 100) * cart[x].qty) / 100
     }
 
+    cartRunningTotal = Math.round(cartRunningTotal)
+
     let finalTotal = parseFloat((cartRunningTotal + 3.45).toFixed(2))
 
     return(
